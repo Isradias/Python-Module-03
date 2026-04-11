@@ -1,12 +1,13 @@
 import sys
 
+
 def valid_inputs(list) -> int:
     nb = 0
     for arg in list:
         try:
             int(arg)
             nb += 1
-        except:
+        except Exception:
             pass
     return (nb)
 
@@ -22,10 +23,11 @@ if (__name__ == "__main__"):
             try:
                 score[i] = int(arg)
                 i += 1
-            except Exception as e:
+            except Exception:
                 print(f"Invalid parameter: '{arg}'")
         if (score_len == 0):
-            raise Exception("No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+            raise Exception("No scores provided. Usage: python3 "
+                            "ft_score_analytics.py <score1> <score2> ...")
         print(f"Scores processed: {score}")
         print(f"Total players: {score_len}")
         print(f"Total score: {sum(score)}")

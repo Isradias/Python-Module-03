@@ -1,5 +1,6 @@
 from math import sqrt
 
+
 def str_to_tuple(p_str_list) -> tuple:
     p_float_list = [0.0] * 3
     i = 0
@@ -16,10 +17,10 @@ def str_to_tuple(p_str_list) -> tuple:
 def get_player_pos() -> tuple:
     while True:
         try:
-            p_str = input("Enter new coordinates as floats "
-                           "in format 'x,y,z': ")
+            p_str = input("Enter new coordinates as "
+                          "floats in format 'x,y,z': ")
             p_str_list = p_str.split(",")
-            if(len(p_str_list) != 3):
+            if len(p_str_list) != 3:
                 raise Exception("Invalid syntax")
             p_tuple = str_to_tuple(p_str_list)
             return (p_tuple)

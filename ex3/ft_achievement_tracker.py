@@ -25,14 +25,15 @@ players = [
     'Israel'
 ]
 
+
 class Player_class():
-    def __init__(self, name):
+    def __init__(self, name) -> None:
         self.name = name
         self.achievements = self.gen_player_achievement()
-        self.unique = set()
-        self.missing = set()
+        self.unique: set = set()
+        self.missing: set = set()
 
-    def gen_player_achievement(self):
+    def gen_player_achievement(self) -> set:
         nb_achievements = random.randint(1, 7)
         return set(random.sample(achievement_list, nb_achievements))
 
@@ -51,11 +52,11 @@ if (__name__ == "__main__"):
 
     for p in players_object:
         p.missing = set.difference(set(achievement_list), p.achievements)
- 
+
     print("=== Achievement Tracker System ===\n")
     for player in players_object:
         print(f"Player: {player.name}: {player.achievements}")
-    
+
     print(f"\nAll distinct achievements: {set(achievement_list)}\n")
 
     print(f"Common achivements: {common_achievements}\n")
